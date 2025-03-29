@@ -1,0 +1,31 @@
+export const blockdata = [
+    {   id: "fourpatch",
+        blockname: "Four Patch",
+        numofblocks: 4,
+        colors: [
+            { id: 1, color: "#ffffff" },
+            { id: 2, color: "#ffffff" },
+            { id: 3, color: "#ffffff" },
+            { id: 4, color: "#ffffff" },
+        ],
+    },
+    {   id: "railfence",
+        blockname: "Rail Fence",
+        numofblocks: 4,
+        colors: [
+            { id: 1, color: "#ffffff" },
+            { id: 2, color: "#ffffff" },
+            { id: 3, color: "#ffffff" },
+            { id: 4, color: "#ffffff" },
+        ],
+    },
+    {   id: "star",
+        blockname: "Star",
+        numofblocks: 3,
+        colors: [
+            { id: 1, color: "#ffffff" },
+            { id: 2, color: "#ffffff" },
+            { id: 3, color: "#ffffff" },
+        ],
+    },
+];

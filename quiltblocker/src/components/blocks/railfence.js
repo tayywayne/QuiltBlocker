@@ -1,39 +1,43 @@
 import React from "react";
 import './railfence.css';
 
-function RailFence({colors}) {
-    const colorArray = typeof colors === 'string'
-    ? colors.split(',')
-    : Array.isArray(colors)
-    ? colors
-    : ['#ffffff', '#ffffff', '#ffffff', '#ffffff']; // Fallback
+function RailFence({ colors }) {
+    if (!colors || colors.length < 4) {
+        return null; 
+      }
+    const style = {
+        '--railfence-color-1': colors[0],
+        '--railfence-color-2': colors[1],
+        '--railfence-color-3': colors[2],
+        '--railfence-color-4': colors[3],
+    };
+    
 
-    const [color1, color2, color3, color4] = colorArray;
     return (
-        <div className="railfence">
+        <div className="railfence" style={style}>
             <div className="railfence-block">
-                <div style={{ backgroundColor: colorArray[0] }} className="railfence-roll"></div>
-                <div style={{ backgroundColor: colorArray[1] }} className="railfence-roll"></div>
-                <div style={{ backgroundColor: colorArray[2] }} className="railfence-roll"></div>
-                <div style={{ backgroundColor: colorArray[3] }} className="railfence-roll"></div>
+                <div className="railfence-roll railfence-color-1"></div>
+                <div className="railfence-roll railfence-color-2"></div>
+                <div className="railfence-roll railfence-color-3"></div>
+                <div className="railfence-roll railfence-color-4"></div>
             </div>
             <div className="railfence-block rrotate-1">
-                <div style={{ backgroundColor: colorArray[0] }} className="railfence-roll"></div>
-                <div style={{ backgroundColor: colorArray[1] }} className="railfence-roll"></div>
-                <div style={{ backgroundColor: colorArray[2] }} className="railfence-roll"></div>
-                <div style={{ backgroundColor: colorArray[3] }} className="railfence-roll"></div>
+                <div className="railfence-roll railfence-color-1"></div>
+                <div className="railfence-roll railfence-color-2"></div>
+                <div className="railfence-roll railfence-color-3"></div>
+                <div className="railfence-roll railfence-color-4"></div>
             </div>
             <div className="railfence-block rrotate-2">
-                <div style={{ backgroundColor: colorArray[0] }} className="railfence-roll"></div>
-                <div style={{ backgroundColor: colorArray[1] }} className="railfence-roll"></div>
-                <div style={{ backgroundColor: colorArray[2] }} className="railfence-roll"></div>
-                <div style={{ backgroundColor: colorArray[3] }} className="railfence-roll"></div>
+                <div className="railfence-roll railfence-color-1"></div>
+                <div className="railfence-roll railfence-color-2"></div>
+                <div className="railfence-roll railfence-color-3"></div>
+                <div className="railfence-roll railfence-color-4"></div>
             </div>
             <div className="railfence-block rrotate-3">
-                <div style={{ backgroundColor: colorArray[0] }} className="railfence-roll"></div>
-                <div style={{ backgroundColor: colorArray[1] }} className="railfence-roll"></div>
-                <div style={{ backgroundColor: colorArray[2] }} className="railfence-roll"></div>
-                <div style={{ backgroundColor: colorArray[3] }} className="railfence-roll"></div>
+                <div className="railfence-roll railfence-color-1"></div>
+                <div className="railfence-roll railfence-color-2"></div>
+                <div className="railfence-roll railfence-color-3"></div>
+                <div className="railfence-roll railfence-color-4"></div>
             </div>
         </div>
     )

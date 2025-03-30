@@ -2,20 +2,28 @@ import React from 'react';
 import './fourpatch.css';
 
 function FourPatch({ colors }) {
-  const colorArray = typeof colors === 'string' 
-  ? colors.split(',') 
-  : Array.isArray(colors) 
-    ? colors 
-    : ['#ffffff', '#ffffff', '#ffffff', '#ffffff']; // Fallback
+  // Render nothing if colors is empty or undefined
+  if (!colors || colors.length < 4) {
+    return null; // Or return a loading spinner if needed
+  }
 
-  const [color1, color2, color3, color4] = colorArray;
+  // console.log('FourPatch Colors:', colors);
+
+  const style = {
+    '--fourpatch-color1': colors[0],
+    '--fourpatch-color2': colors[1],
+    '--fourpatch-color3': colors[2],
+    '--fourpatch-color4': colors[3],
+  };
+
+  // console.log('FourPatch Style:', style);
 
   return (
-    <div className="fourpatch">
-      <div style={{ backgroundColor: colorArray[0] }} className='fourpatch1'/>
-      <div style={{ backgroundColor: colorArray[1] }} className='fourpatch2'/>
-      <div style={{ backgroundColor: colorArray[2] }} className='fourpatch3'/>
-      <div style={{ backgroundColor: colorArray[3] }} className='fourpatch4'/>
+    <div className="fourpatch" style={style}>
+      <div className='fourpatch1' />
+      <div className='fourpatch2' />
+      <div className='fourpatch3' />
+      <div className='fourpatch4' />
     </div>
   );
 }

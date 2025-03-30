@@ -1,13 +1,15 @@
 import React from 'react';
-import QuiltForm from '../components/quiltform';
-import GenedQuilt from '../components/genedquilt';
+import BuildQuilt from '../components/buildquilt';
+// import ShowCustomBlock from '../components/showcustomblock';
+import MyQuilts from '../components/myquilts';
 
 
 function Home() {
   return (
     <div className="home">
-        <QuiltForm />
-        <GenedQuilt />
+      <BuildQuilt />
+      <MyQuilts />
+      {/* <ShowCustomBlock ID='119151'/> */}
     </div>
   );
 }

@@ -1,3 +1,10 @@
+:root {
+    --railfence-color-1: #f7b5b5;
+    --railfence-color-2: #cbfdcb;
+    --railfence-color-3: #cbcbf7;
+    --railfence-color-4: #f7f8c9;
+}
+
 .railfence {
     display: flex;
     background-color: aqua;
@@ -23,4 +30,17 @@
 }
 .rrotate-3 {
     flex-direction: row-reverse;
+}
+
+.railfence-color-1 {
+    background-color: var(--railfence-color-1);
+}
+.railfence-color-2 {
+    background-color: var(--railfence-color-2);
+}
+.railfence-color-3 {
+    background-color: var(--railfence-color-3);
+}
+.railfence-color-4 {
+    background-color: var(--railfence-color-4);
 }

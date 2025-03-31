@@ -22,7 +22,6 @@ function Home() {
       <div className='home-intro'>
         <p>
           QuiltBlocker is a web application that allows you to create and customize quilt blocks and quilts. 
-          You can build your own quilt blocks, assemble them into quilts, and save your creations for future use.
         </p>
       </div>
       <div className='rainbow-divider'></div>

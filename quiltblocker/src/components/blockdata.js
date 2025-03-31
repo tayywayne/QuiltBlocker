@@ -11,4 +11,8 @@ export const blockdata = [
         blockname: "Star",
         numofcolors: 3,
     },
+    {   id: "hurndash",
+        blockname: "HurnDash",
+        numofcolors: 3,
+    },
 ];

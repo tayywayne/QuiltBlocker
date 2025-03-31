@@ -2,6 +2,7 @@ import React from 'react'
 import Star from './blocks/star'
 import FourPatch from './blocks/fourpatch'
 import RailFence from './blocks/railfence'
+import HurnDash from './blocks/hurndash'
 
 function ShowCustomBlock({ID, altStyle}) {
 
@@ -34,6 +35,13 @@ function ShowCustomBlock({ID, altStyle}) {
         return (
             <div className='block' style={altStyle}>
                 <Star colors={block.colors}/>
+            </div>
+        )
+    }
+    if(block.pattern === 'hurndash') {
+        return (
+            <div className='block' style={altStyle}>
+                <HurnDash colors={block.colors}/>
             </div>
         )
     }

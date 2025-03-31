@@ -3,6 +3,7 @@ import { blockdata } from './blockdata'
 import FourPatch from './blocks/fourpatch'
 import RailFence from './blocks/railfence'  
 import Star from './blocks/star'
+import HurnDash from './blocks/hurndash'
 import { useNavigate } from 'react-router-dom'
 
 function BuildBlockForm() {
@@ -51,25 +52,38 @@ function BuildBlockForm() {
     <div>
 
         <form onSubmit={handleSubmit} className='build-quilt-form'>
-            <div>
+            <div className='build-block-pick-pattern'>
                 <h2>Choose a Pattern</h2>
-                <input onClick={handlePatternChange} type='radio' value='fourpatch' id='fourpatch' name='pattern' required/>
-                <label htmlFor='fourpatch'><FourPatch colors={defaultColors}/>Four Patch</label>
-                <input onClick={handlePatternChange} type='radio' value='railfence' id='railfence' name='pattern' required/>
-                <label htmlFor='railfence'><RailFence colors={defaultColors}/>Rail Fence</label>
-                <input onClick={handlePatternChange} type='radio' value='star' id='star' name='pattern' required/>
-                <label htmlFor='star'><Star colors={defaultColors}/>Star</label>
+                <div className='build-block-pattern'>
+                    <input onClick={handlePatternChange} type='radio' value='fourpatch' id='fourpatch' name='pattern' required/>
+                    <label htmlFor='fourpatch'><FourPatch colors={defaultColors}/></label>
+                </div>
+                <div className='build-block-pattern'>
+                    <input onClick={handlePatternChange} type='radio' value='railfence' id='railfence' name='pattern' required/>
+                    <label htmlFor='railfence'><RailFence colors={defaultColors}/></label>
+                </div>
+                <div className='build-block-pattern'>
+                    <input onClick={handlePatternChange} type='radio' value='star' id='star' name='pattern' required/>
+                    <label htmlFor='star'><Star colors={defaultColors}/></label>
+                </div>
+                <div className='build-block-pattern'>
+                    <input onClick={handlePatternChange} type='radio' value='hurndash' id='hurndash' name='pattern' required/>
+                    <label htmlFor='hurndash'><HurnDash colors={defaultColors}/></label>
+                </div>
             </div>
 
-            <div>
-                <h2>Pick your colors</h2>
-                {colors.map((color, index) => (
-                    <div key={index}>
-                        <label htmlFor={`color-${index}`}>{`color-${index + 1}`}</label>
-                        <input type='color' id={`color-${index}`} value={color} onChange={(e) => handleColorChange(index, e.target.value)} required/>
-                    </div>
+            <div className='build-block-pick-colors'>
+                <div>
+                    <h2>Pick your colors</h2>
+                    {colors.map((color, index) => (
+                        <div key={index} className='build-block-color'>
+                            <label htmlFor={`color-${index}`}>{`Color ${index + 1}`}</label>
+                            <input type='color' id={`color-${index}`} value={color} onChange={(e) => handleColorChange(index, e.target.value)} required/>
+                        </div>
 
-                ))}
+                    ))}
+                </div>
+
             </div>
             <div className='build-quilt-form-submit'>
                 <button type='submit'>Submit</button>

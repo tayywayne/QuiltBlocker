@@ -45,7 +45,7 @@ header {
     text-decoration: none;
     margin: 10px 10px;
     background-color: var(--primary-color); /* Default background color */
-    border: var(--secondary-color) solid 1px;
+    border: var(--text-color) solid 2px;
     border-bottom: none;
     padding: 5px 10px 1px 10px;
     border-radius: 10px 10px 0px 0px;
@@ -54,6 +54,7 @@ header {
     overflow: hidden; /* Prevent pseudo-element overflow */
     z-index: 0; /* Ensure the text stays above the pseudo-element */
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth background-color transition */
+    box-shadow: 3px 0px 0px 0px rgba(242,198,222,1);
 }
 
 .nav-link::before {
@@ -71,8 +72,10 @@ header {
 }
 
 .nav-link:hover {
+    transition: 0.3s;
     background-color: rgba(255, 255, 255, 0);
     color: var(--text-color); 
+    box-shadow: 2px 0px 0px 0px rgba(242,198,222,1);
 }
 
 .nav-link:hover::before {
@@ -89,12 +92,13 @@ body {
 .content-body {
     max-width: 80%;
     background-color: var(--content-body-color);
-    border: var(--background-extra-color) solid 1px;
+    border: var(--text-color) solid 2px;
     min-height: 600px;
     margin: auto;
     border-radius: 50px;
     padding: 20px;
     color: var(--text-color);
+    box-shadow: 3px 4px 0px 1px rgba(242,198,222,1);
 }
 
 .footer-container {
@@ -113,9 +117,10 @@ body {
     border-radius: 0px 0px 15px 15px;
     padding: 10px 0px;
     margin-bottom: 20px;
-    border: var(--secondary-color) solid 1px;
+    border: var(--text-color) solid 2px;
     border-top: none;
     color: var(--text-color);
+    box-shadow: 3px 4px 0px 1px rgba(242,198,222,1);
  }
 
  .build-block {
@@ -137,7 +142,56 @@ body {
     color: var(--text-color);
  }
 
- .build-quilt-form-submit {
+
+.build-block-pick-pattern {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    color: var(--text-color);
+    gap: 20px;
+}
+
+.build-block-pattern {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    color: var(--text-color);
+}
+
+.build-block-pattern input {
+    display: none;
+}
+
+.build-block-pattern label {
+    padding: 10px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    border: var(--text-color) solid 2px;
+    box-shadow: 3px 4px 0px 1px rgba(219,205,240,1);
+}
+
+.build-block-pattern label:hover {
+    box-shadow: 2px 2px 0px 1px rgba(219,205,240,1);
+    transition: 0.3s;
+}
+
+.build-block-pattern label:active {
+    transform: translateY(4px);
+    transition: 0.3s;
+}
+
+.build-block-pattern input:checked + label {
+    box-shadow: 3px 4px 0px 1px rgba(249,198,201,1);
+    border: rgba(249,198,201,1) solid 2px;
+}
+
+.build-quilt-form-submit {
     width: 100%;
     grid-column: 1 / -1;
     display: flex;
@@ -148,17 +202,115 @@ body {
  .build-quilt-form-submit button {
     width: 50%;
     height: 50px;
-    background-color: var(--primary-color);
-    border: var(--secondary-color) solid 1px;
+    background-color: rgba(242,198,222,1);
+    border: var(--text-color) solid 2px;
     color: var(--text-color);
     font-size: 20px;
     border-radius: 10px;
+    box-shadow: 3px 4px 0px 1px rgba(249,198,201,1);
  }
 
 .build-quilt-form-submit button:hover {
-    background-color: var(--tertiary-color);
-    color: var(--text-color);
     transition: 0.3s;
+    box-shadow: 2px 3px 0px 1px rgba(249,198,201,1);
+    transform: translateY(2px);
+}
+
+.build-quilt-form-submit button:active {
+    transform: translateY(4px);
+    transition: 0.3s;
+}
+
+.rainbow-divider {
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(273deg, rgba(249,198,201,1) 0%, rgba(242,198,222,1) 14%, rgba(219,205,240,1) 27%, rgba(198,222,241,1) 42%, rgba(201,228,222,1) 58%, rgba(201,228,222,1) 73%, rgba(250,237,203,1) 87%, rgba(247,217,196,1) 100%);
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.build-block-pick-colors {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    color: var(--text-color);
+    gap: 20px;
+}
+
+.build-block-color {
+    margin: 30px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.build-block-color label {
+    padding: 10px;
+}
+.build-block-color input {
+    border: var(--text-color) solid 2px;
+    border-radius: 10px;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    box-shadow: 2px 3px 0px 1px rgba(219,205,240,1);
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.home h1 {
+    font-size: 30px;
+    color: var(--text-color);
+    margin: 0px;
+    padding: 0px;
+}
+
+.home-welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home-intro {
+    width: 100%;
+}
+
+.home-features {
+    width: 100%;
+}
+
+.home-examples {
+    width: 100%;
+    overflow: hidden; /* Hide content that overflows the container */
+    position: relative;
+    display: flex; /* Use flexbox for seamless scrolling */
+}
+
+.home-examples-marquee {
+    display: flex; /* Ensure items are laid out in a row */
+    animation: marquee 400s linear infinite; /* Infinite scrolling animation */
+}
+
+.home-examples-marquee > * {
+    flex-shrink: 0; /* Prevent items from shrinking */
+    margin-right: 20px; /* Optional: Add spacing between items */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0); /* Start at the initial position */
+    }
+    100% {
+        transform: translateX(-100%); /* Move left by 100% of the container width */
+    }
 }
 
 

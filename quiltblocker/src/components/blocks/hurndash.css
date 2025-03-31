@@ -1,0 +1,47 @@
+:root {
+    --hurndash-color1: #ff0000;
+    --hurndash-color2: #00ff00;
+    --hurndash-color3: #0000ff;
+    --block-size: 100px
+}
+
+.hurndash {
+    display: flex;
+    width: var(--block-size);
+    height: var(--block-size);
+    flex-wrap: wrap;
+}
+
+.hurndash-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+}
+
+.hurndash-tri {
+    background: linear-gradient(135deg, var(--hurndash-color1) 50%, var(--hurndash-color2) 50%);
+}
+
+.hurndash-half {
+    background: linear-gradient(180deg, var(--hurndash-color1) 50%, var(--hurndash-color3) 50%);
+}
+
+.hurndash-mid {
+    background-color: var(--hurndash-color1);
+}
+
+.hurndash-rotate-1 {
+    transform: rotate(90deg);
+}
+
+.hurndash-rotate-2 {
+    transform: rotate(270deg);
+}
+
+.hurndash-rotate-3 {
+    transform: rotate(180deg);
+}
+
+.hurndash-rotate-4 {
+    transform: rotate(360deg);
+}

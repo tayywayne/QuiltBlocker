@@ -2,12 +2,10 @@ import React from 'react';
 import './fourpatch.css';
 
 function FourPatch({ colors }) {
-  // Render nothing if colors is empty or undefined
   if (!colors || colors.length < 4) {
-    return null; // Or return a loading spinner if needed
+    return null;
   }
 
-  // console.log('FourPatch Colors:', colors);
 
   const style = {
     '--fourpatch-color1': colors[0],
@@ -16,7 +14,6 @@ function FourPatch({ colors }) {
     '--fourpatch-color4': colors[3],
   };
 
-  // console.log('FourPatch Style:', style);
 
   return (
     <div className="fourpatch" style={style}>

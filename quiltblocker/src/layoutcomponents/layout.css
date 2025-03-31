@@ -1,9 +1,10 @@
 :root {
-    --primary-color: #9db6b0;
-    --secondary-color: #7d9690;
-    --tertiary-color: #b8cac6;
-    --background-color: #f0f0f0;
-    --content-body-color: #ffffff;
+    --primary-color: #d2d2cf;
+    --secondary-color: #e2e2df;
+    --tertiary-color: #bdbdbd;
+    --background-extra-color: #d4d4d4;
+    --background-color: #f1f1f1;
+    --content-body-color: #f7f7f7;
     --text-color: #333;
 }
 
@@ -29,7 +30,6 @@ header {
 }
 
 .logo {
-    width: 100px;
     height: 100px;
 }
 
@@ -44,18 +44,39 @@ header {
 .nav-link {
     text-decoration: none;
     margin: 10px 10px;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Default background color */
     border: var(--secondary-color) solid 1px;
     border-bottom: none;
-    padding: 5px 10px 1px 10px; 
+    padding: 5px 10px 1px 10px;
     border-radius: 10px 10px 0px 0px;
     color: var(--text-color);
+    position: relative; /* Required for pseudo-element positioning */
+    overflow: hidden; /* Prevent pseudo-element overflow */
+    z-index: 0; /* Ensure the text stays above the pseudo-element */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth background-color transition */
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(273deg, rgba(249,198,201,1) 0%, rgba(242,198,222,1) 14%, rgba(219,205,240,1) 27%, rgba(198,222,241,1) 42%, rgba(201,228,222,1) 58%, rgba(201,228,222,1) 73%, rgba(250,237,203,1) 87%, rgba(247,217,196,1) 100%);
+    opacity: 0; /* Start with no gradient visible */
+    transition: opacity 0.3s ease-in-out; /* Smooth opacity transition */
+    z-index: -1; /* Place behind the text */
+    border-radius: 10px 10px 0px 0px;
 }
 
 .nav-link:hover {
-    background-color: var(--tertiary-color);
-    color: var(--text-color);
-    transition: 0.3s;
+    background-color: rgba(255, 255, 255, 0);
+    color: var(--text-color); 
+}
+
+.nav-link:hover::before {
+    opacity: 1; /* Show the gradient on hover */
 }
 
 body {
@@ -68,7 +89,7 @@ body {
 .content-body {
     max-width: 80%;
     background-color: var(--content-body-color);
-    border: var(--secondary-color) solid 1px;
+    border: var(--background-extra-color) solid 1px;
     min-height: 600px;
     margin: auto;
     border-radius: 50px;

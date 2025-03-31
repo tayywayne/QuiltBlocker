@@ -11,6 +11,7 @@ function BuildQuilt() {
     const [numColors, setNumColors] = useState(0);
     const [colors, setColors] = useState([]);
     const navigate = useNavigate();
+    const defaultColors = ['#f9c6c9', '#dbcdf0', '#c9e4de', '#faedcb'];
 
     const handlePatternChange = (e) => {
         const selectedPattern = e.target.value;
@@ -59,11 +60,11 @@ function BuildQuilt() {
             <div>
                 <h2>Choose a Pattern</h2>
                 <input onClick={handlePatternChange} type='radio' value='fourpatch' id='fourpatch' name='pattern' required/>
-                <label htmlFor='fourpatch'><FourPatch colors={['#f7b5b5', '#cbfdcb', '#cbcbf7', '#f7f8c9']}/>Four Patch</label>
+                <label htmlFor='fourpatch'><FourPatch colors={defaultColors}/>Four Patch</label>
                 <input onClick={handlePatternChange} type='radio' value='railfence' id='railfence' name='pattern' required/>
-                <label htmlFor='railfence'><RailFence colors={['#f7b5b5', '#cbfdcb', '#cbcbf7', '#f7f8c9']}/>Rail Fence</label>
+                <label htmlFor='railfence'><RailFence colors={defaultColors}/>Rail Fence</label>
                 <input onClick={handlePatternChange} type='radio' value='star' id='star' name='pattern' required/>
-                <label htmlFor='star'><Star colors={['#f7b5b5', '#cbfdcb', '#cbcbf7', '#f7f8c9']}/>Star</label>
+                <label htmlFor='star'><Star colors={defaultColors}/>Star</label>
             </div>
 
             <div>

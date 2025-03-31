@@ -3,38 +3,37 @@ import Star from './blocks/star'
 import FourPatch from './blocks/fourpatch'
 import RailFence from './blocks/railfence'
 
-function ShowCustomBlock({ID}) {
+function ShowCustomBlock({ID, altStyle}) {
 
-    const savedQuilts = JSON.parse(localStorage.getItem('quilts')) || [];
-    // console.log(savedQuilts);
-    if (savedQuilts.length === 0) {
-        return <div>No quilts found</div>;
-    }
-    const quilt = savedQuilts.find(quilt => quilt.ID === Number(ID));
-    // console.log(quilt);
+    const savedBlocks = JSON.parse(localStorage.getItem('blocks')) || [];
 
-    // console.log(quilt.colors)
-    if (!quilt) {
-        return <div>Quilt not found</div>;
+    if (savedBlocks.length === 0) {
+        return <div>No Blocks found</div>;
     }
-    if(quilt.pattern === 'fourpatch') {
+    const block = savedBlocks.find(block => block.ID === Number(ID));
+    if (!block) {
+        return <div>block not found</div>;
+    }
+
+
+    if(block.pattern === 'fourpatch') {
         return (
-            <div className='block'>
-                <FourPatch colors={quilt.colors}/>
+            <div className='block' style={altStyle}>
+                <FourPatch colors={block.colors}/>
             </div>
         )
     }
-    if(quilt.pattern === 'railfence') {
+    if(block.pattern === 'railfence') {
         return (
-            <div className='block'>
-                <RailFence colors={quilt.colors}/>
+            <div className='block' style={altStyle}>
+                <RailFence colors={block.colors}/>
             </div>
         )
     }
-    if(quilt.pattern === 'star') {
+    if(block.pattern === 'star') {
         return (
-            <div className='block'>
-                <Star colors={quilt.colors}/>
+            <div className='block' style={altStyle}>
+                <Star colors={block.colors}/>
             </div>
         )
     }

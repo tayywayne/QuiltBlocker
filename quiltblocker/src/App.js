@@ -5,6 +5,8 @@ import ContentBody from './layoutcomponents/contentbody';
 import Footer from './layoutcomponents/footer';
 import BuildBlock from './pages/buildblock';
 import MyBlocks from './pages/myblocks';
+import BuildQuilt from './pages/buildquilt';
+import MyQuilts from './pages/myquilts';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/buildblock" element={<BuildBlock />} />
                   <Route path="/myblocks" element={<MyBlocks />} />
+                <Route path="/buildquilt" element={<BuildQuilt />} />
+                  <Route path="/myquilts" element={<MyQuilts />} />
               </Routes>
           </ContentBody>
           <Footer />

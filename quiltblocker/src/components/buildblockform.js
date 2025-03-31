@@ -5,8 +5,8 @@ import RailFence from './blocks/railfence'
 import Star from './blocks/star'
 import { useNavigate } from 'react-router-dom'
 
-function BuildQuilt() {
-    const [quiltID, setQuiltID] = useState('');
+function BuildBlockForm() {
+    const [blockID, setBlockID] = useState('');
     const [pattern, setPattern] = useState('');
     const [numColors, setNumColors] = useState(0);
     const [colors, setColors] = useState([]);
@@ -21,32 +21,26 @@ function BuildQuilt() {
             setNumColors(patternData.numofcolors);
             setColors(Array(patternData.numofcolors).fill('#000000'));
         }
-        // console.log('Selected Pattern:', selectedPattern);
-        // console.log('Number of Colors:', numColors);
-        // console.log('Colors:', colors);
     }
 
     const handleColorChange = (index, value) => {
         const newColors = [...colors]
         newColors[index] = value;
         setColors(newColors);
-        // console.log('Updated Colors:', newColors);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newQuiltID = Math.floor(Math.random() * 1000000);
-        setQuiltID(newQuiltID);
-        const newQuilt = {
-            ID: newQuiltID,
+        const newBlockID = Math.floor(Math.random() * 1000000);
+        setBlockID(newBlockID);
+        const newBlock = {
+            ID: newBlockID,
             pattern: pattern,
             colors: colors
         }
-        const savedQuilts = JSON.parse(localStorage.getItem('quilts')) || [];
-        savedQuilts.push(newQuilt);
-        localStorage.setItem('quilts', JSON.stringify(savedQuilts));
-        // console.log('New Quilt:', newQuilt);
-        // console.log('Saved Quilts:', savedQuilts);
+        const savedBlocks = JSON.parse(localStorage.getItem('blocks')) || [];
+        savedBlocks.push(newBlock);
+        localStorage.setItem('blocks', JSON.stringify(savedBlocks));
         navigate(`/myblocks`);
 
     }
@@ -86,4 +80,4 @@ function BuildQuilt() {
   )
 }
 
-export default BuildQuilt
+export default BuildBlockForm

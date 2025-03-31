@@ -1,5 +1,5 @@
 import React from 'react'
-import BuildQuilt from '../components/buildquilt'
+import BuildBlockForm from '../components/buildblockform'
 
 function BuildBlock() {
   return (
@@ -7,7 +7,7 @@ function BuildBlock() {
         <h1>Build Your Quilt Block</h1>
         <p>Use the form below to create your custom quilt block.</p>
         <div>
-            <BuildQuilt />
+            <BuildBlockForm />
         </div>
     </div>
   )

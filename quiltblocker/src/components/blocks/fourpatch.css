@@ -3,40 +3,40 @@
     --fourpatch-color2: #00ff00;
     --fourpatch-color3: #0000ff;
     --fourpatch-color4: #ffff00;
+    --block-size: 100px
 }
 
 .fourpatch {
     display: flex;
-    background-color: aqua;
-    width: 100px;
-    height: 100px;
+    width: var(--block-size);
+    height: var(--block-size);
     flex-wrap: wrap;
 }
 
 .fourpatch1{
     background-color: var(--fourpatch-color1);
-    width: 50px;
-    height: 50px;
+    width: 50%;
+    height: 50%;
     flex: 50%;
 }
 
 .fourpatch2{
     background-color: var(--fourpatch-color2);
-    width: 50px;
-    height: 50px;
+    width: 50%;
+    height: 50%;
     flex: 50%;
 }
 
 .fourpatch3{
     background-color: var(--fourpatch-color3);
-    width: 50px;
-    height: 50px;
+    width: 50%;
+    height: 50%;
     flex: 50%;
 }
 
 .fourpatch4{
     background-color: var(--fourpatch-color4);
-    width: 50px;
-    height: 50px;
+    width: 50%;
+    height: 50%;
     flex: 50%;
 }

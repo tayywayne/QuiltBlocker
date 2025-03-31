@@ -3,19 +3,20 @@
     --railfence-color-2: #cbfdcb;
     --railfence-color-3: #cbcbf7;
     --railfence-color-4: #f7f8c9;
+
+    --block-size: 100px
 }
 
 .railfence {
     display: flex;
-    background-color: aqua;
-    width: 100px;
-    height: 100px;
+    width: var(--block-size);
+    height: var(--block-size);
     flex-wrap: wrap;
 }
 
 .railfence-block {
-    width: 50px;
-    height: 50px;
+    width: 50%;
+    height: 50%;
     display: flex;
 }
 .railfence-roll {

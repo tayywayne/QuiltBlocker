@@ -1,0 +1,62 @@
+:root {
+    --quilt-height: 4;
+    --quilt-width: 4;
+}
+
+.map-quilt-container {
+    width: 100%;
+}
+
+.quilt-card {
+
+    display: flex;
+    width: 100%;
+}
+
+.full-quilt {
+    display: grid;
+    grid-template-columns: repeat(var(--quilt-width), 1fr);
+    grid-template-rows: repeat(var(--quilt-height), 1fr);
+}
+
+/* .single-block {
+    background-color: aqua;
+} */
+
+.quilt-card-preview {
+    width: 60%;
+    display: flex;
+}
+
+.quilt-card-info {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.quilt-card-info-text {
+    width: 50%;
+}
+
+.quilt-card-info-block {
+    width: 50%;
+}
+
+.block-tiny {
+    width: 20px;
+    height: 20px;
+}
+
+.map-quilt-card {
+    display: flex;
+    justify-content: center;
+}
+
+.rainbow-divider {
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(273deg, rgba(249,198,201,1) 0%, rgba(242,198,222,1) 14%, rgba(219,205,240,1) 27%, rgba(198,222,241,1) 42%, rgba(201,228,222,1) 58%, rgba(201,228,222,1) 73%, rgba(250,237,203,1) 87%, rgba(247,217,196,1) 100%);
+    margin: 20px 0;
+    border-radius: 5px;
+}

@@ -3,17 +3,17 @@ import ShowCustomBlock from '../components/showcustomblock'
 
 function MyBlocks() {
 
-    const savedQuilts = JSON.parse(localStorage.getItem('quilts')) || [];
+    const savedBlocks = JSON.parse(localStorage.getItem('blocks')) || [];
 
-    if (savedQuilts.length === 0) {
-        return <div>No quilts found</div>;
+    if (savedBlocks.length === 0) {
+        return <div>No block found</div>;
     }
 
   return (
             <div>
-            {savedQuilts.map((quilt) => (
-                <div key={quilt.ID} className='block'>
-                    <ShowCustomBlock ID={quilt.ID} />
+            {savedBlocks.map((block) => (
+                <div key={block.ID} className='block'>
+                    <ShowCustomBlock ID={block.ID} />
                 </div>
             ))}
         </div>

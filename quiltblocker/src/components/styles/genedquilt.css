@@ -1,6 +1,0 @@
-.gened-quilt {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0px;
-    max-width: 300px;
-}

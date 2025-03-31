@@ -2,48 +2,55 @@
     --star-color-1: #ff0000;
     --star-color-2: #00ff00;
     --star-color-3: #0000ff;
+    --block-size: 100px; /* Default size of the star */
 }
 
 .star {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100px;
-    height: 100px;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    width: var(--block-size); /* Dynamic size based on --block-size */
+    height: var(--block-size); /* Dynamic size based on --block-size */
 }
 
 .star-block {
-    width: 50px;
-    height: 50px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    width: 100%; /* Fill the parent container */
+    height: 100%; /* Fill the parent container */
 }
+
+.star-block-1,
+.star-block-2,
+.star-block-3,
+.star-block-4 {
+    width: 100%; /* Scale with the parent container */
+    height: 100%; /* Scale with the parent container */
+}
+
 .star-block-1 {
     background-color: var(--star-color-2);
-    width: 25px;
-    height: 25px;
 }
 
 .star-block-2 {
     background: linear-gradient(45deg, var(--star-color-1) 50%, var(--star-color-2) 50%);
-    width: 25px;
-    height: 25px;
 }
+
 .star-block-3 {
     background: linear-gradient(45deg, var(--star-color-2) 50%, var(--star-color-1) 50%);
-    width: 25px;
-    height: 25px;
 }
+
 .star-block-4 {
     background: linear-gradient(135deg, var(--star-color-1) 50%, var(--star-color-3) 50%);
-    width: 25px;
-    height: 25px;
 }
+
 .rotate-1 {
     transform: rotate(90deg);
 }
+
 .rotate-2 {
     transform: rotate(180deg);
 }
+
 .rotate-3 {
     transform: rotate(270deg);
 }

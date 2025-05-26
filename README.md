@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ![logo](logo.png)
 ### 🧵QuiltBlocker
 *A dynamic, React-based web application that lets you design custom quilt blocks and visualize full quilts in real time!*
@@ -29,3 +30,4 @@ QuiltBlocker is a work in progress, and I'm continuing to improve both functiona
 * 🧵 Support for multiple block patterns within a single quilt
 * 🎨 Live color previews when creating a block
 * 🧩 Real-time visual updates while building quilts
+

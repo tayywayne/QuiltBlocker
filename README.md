@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ![logo](logo.png)
 ### 🧵QuiltBlocker
 *A dynamic, React-based web application that lets you design custom quilt blocks and visualize full quilts in real time!*

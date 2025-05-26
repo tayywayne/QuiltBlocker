@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ShowCustomBlock from './showcustomblock';
+import { useNavigate } from 'react-router-dom'
 
 function BuildQuiltForm() {
     const savedBlocks = JSON.parse(localStorage.getItem('blocks')) || [];
@@ -8,34 +9,31 @@ function BuildQuiltForm() {
     const [ quiltSizeWidth, setQuiltSizeWidth ] = useState('');
     const [ quiltName, setQuiltName ] = useState('');
     const [ quiltID, setQuiltID ] = useState('');
+    const navigate = useNavigate();
     
 
     if (savedBlocks.length === 0) {
-        return <div>No blocks found</div>;
+        return <div>No blocks found, please go make one!</div>;
     }
 
     const handleHeightChange = (e) => {
         const selectedSize = e.target.value;
         setQuiltSizeHeight(selectedSize);
-        console.log('Selected Height:', selectedSize);
     }
 
     const handleWidthChange = (e) => {
         const selectedSize = e.target.value;
         setQuiltSizeWidth(selectedSize);
-        console.log('Selected Width:', selectedSize);
     }
 
     const handleBlockChange = (e) => {
         const selectedBlock = e.target.value;
         setBlockID(selectedBlock);
-        console.log('Selected Block:', selectedBlock);
     }
 
     const handleQuiltNameChange = (e) => {
         const selectedName = e.target.value;
         setQuiltName(selectedName);
-        console.log('Selected Quilt Name:', selectedName);
     }
 
     const handleSubmit = (e) => {
@@ -52,40 +50,48 @@ function BuildQuiltForm() {
         const savedQuilts = JSON.parse(localStorage.getItem('quilts')) || [];
         savedQuilts.push(newQuilt);
         localStorage.setItem('quilts', JSON.stringify(savedQuilts));
-        console.log('New Quilt:', newQuilt);
+        navigate(`/myquilts`);
     }
 
 
 
   return (
     <div>
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label>Height</label>
-                <input type='range' min="4" max="10" onChange={handleHeightChange}></input>
+        <form onSubmit={handleSubmit} className='build-quilt-form'>
+
+            <div className='build-quilt-form-size'>
+                <div className='build-quilt-form-size-div'>
+                    <label>Height</label>
+                    <input type='range' min="4" max="10" onChange={handleHeightChange} required></input>
+                </div>
+
+                <div className='build-quilt-form-size-div'>
+                    <label>Width</label>
+                    <input type='range' min="4" max="10" onChange={handleWidthChange} required></input>
+                </div>
             </div>
 
-            <div>
-            <label>Width</label>
-            <input type='range' min="4" max="10" onChange={handleWidthChange}></input>
-            </div>
 
-            <div>
+            <div className='build-quilt-form-pick-block-main'>
                 <label>Pick a Block</label>
-                {savedBlocks.map((block, index) => (
-                    <div key={index}>
-                        <label htmlFor={`block-${index}`}><ShowCustomBlock ID={block.ID}/></label>
-                        <input type='radio' name="block" value={block.ID} id={`block-${index}`} onChange={handleBlockChange}></input>
-                    </div>
-                ))}
+                <div className='build-quilt-form-pick-block'>
+                    {savedBlocks.map((block, index) => (
+                        <div key={index} className='build-quilt-blocks'>
+                            
+                            <input type='radio' name="block" value={block.ID} id={`block-${index}`} onChange={handleBlockChange} required></input>
+                            <label htmlFor={`block-${index}`}><ShowCustomBlock ID={block.ID}/></label>
+                        </div>
+                    ))}
+                </div>
+
             </div>
 
             <div>
                 <label>Quilt Name</label>
-                <input type='text' value={quiltName} onChange={handleQuiltNameChange}></input>
+                <input type='text' value={quiltName} onChange={handleQuiltNameChange} required></input>
             </div>
 
-            <div>
+            <div className='build-quilt-form-submit'>
                 <button type='submit'>Submit</button>
             </div>
         </form>

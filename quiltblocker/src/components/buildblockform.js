@@ -51,7 +51,7 @@ function BuildBlockForm() {
   return (
     <div>
 
-        <form onSubmit={handleSubmit} className='build-quilt-form'>
+        <form onSubmit={handleSubmit} className='build-block-form'>
             <div className='build-block-pick-pattern'>
                 <h2>Choose a Pattern</h2>
                 <div className='build-block-pattern'>

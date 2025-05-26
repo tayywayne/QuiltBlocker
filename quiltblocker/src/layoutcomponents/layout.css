@@ -191,6 +191,97 @@ body {
     border: rgba(249,198,201,1) solid 2px;
 }
 
+.build-quilt-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 50px;
+}
+
+.build-block-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 50px;
+}
+
+.build-quilt-form-size {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: var(--text-color);
+}
+
+.build-quilt-form-size-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.build-quilt-form-pick-block-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    color: var(--text-color);
+    gap: 20px;
+}
+
+.build-quilt-form-pick-block {
+    max-height: 300px;
+    width: 80%;
+    overflow: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.build-quilt-blocks {
+    margin: 10px;
+}
+
+.build-quilt-blocks input {
+    display: none;
+}
+
+.build-quilt-blocks label {
+    display: block;
+    padding: 10px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    border: var(--text-color) solid 2px;
+    box-shadow: 3px 4px 0px 1px rgba(219,205,240,1);
+}
+
+.build-quilt-blocks label:hover {
+    box-shadow: 2px 2px 0px 1px rgba(219,205,240,1);
+    transition: 0.3s;
+}
+
+.build-quilt-blocks label:active {
+    box-shadow: 2px 2px 0px 1px rgba(219,205,240,1);
+    transition: 0.3s;
+}
+
+.build-quilt-blocks input:checked + label {
+    box-shadow: 3px 4px 0px 1px rgba(249,198,201,1);
+    border: rgba(249,198,201,1) solid 2px;
+}
+
+
 .build-quilt-form-submit {
     width: 100%;
     grid-column: 1 / -1;
@@ -200,7 +291,7 @@ body {
  }
 
  .build-quilt-form-submit button {
-    width: 50%;
+    width: 200px;
     height: 50px;
     background-color: rgba(242,198,222,1);
     border: var(--text-color) solid 2px;
@@ -220,6 +311,8 @@ body {
     transform: translateY(4px);
     transition: 0.3s;
 }
+
+
 
 .rainbow-divider {
     width: 100%;
@@ -312,5 +405,3 @@ body {
         transform: translateX(-100%); /* Move left by 100% of the container width */
     }
 }
-
-
